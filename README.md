@@ -24,7 +24,7 @@ Applying an aggregation, the script achieves the creation of result data frame t
 
 Finally, result data frame is showed.
 
-##Code Book of result.txt
+## Code Book of result.txt
 
 Subject integer
  Identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
