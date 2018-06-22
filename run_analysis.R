@@ -30,7 +30,7 @@ train_subjects_raw<-read.table("UCI HAR Dataset/train/subject_train.txt")
 train_activities_raw<-read.table("UCI HAR Dataset/train/y_train.txt")
 
 #merge all train
-train_raw<-cbind(training_subjects_raw,train_activities_raw,train_data_raw)
+train_raw<-cbind(train_subjects_raw,train_activities_raw,train_data_raw)
 
 
 #Merge test and training
@@ -79,7 +79,7 @@ merged_named<-merge(merged_filtered,LU_activities,sort = FALSE)
 #colnames(LU_activities)<-c("Activity","Activity_Name") gave name to Activities_name column
 
 #Using this section for reordering columns for setting first columns for dimensions and next columns for variables and removing activity ID
-merged_fixed<-merged_named[,c(2,69,3:68)]
+result1<-merged_named[,c(2,69,3:68)]
 
 ########################################################################################################################################################
 #  STEP 5 From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
@@ -87,12 +87,13 @@ merged_fixed<-merged_named[,c(2,69,3:68)]
 
 #Moving variables column names as dimension for aggregating.
 library(reshape2)
-merged_dimensioned<-melt(merged_fixed,id.vars = c(1:2))
+merged_dimensioned<-melt(result1,id.vars = c(1:2))
 
-#result comes from aggregating the average value for each subject, Activity and measure. 
-result<-aggregate(value ~ Subject + Activity_Name + variable,data=merged_dimensioned,mean)
+#result2 comes from aggregating the average value for each subject, Activity and measure and reshape if for creating one column per each variable. 
+result2<-dcast(merged_dimensioned,Subject + Activity_Name ~ variable,mean)
 
 #output result
+write.table(result2,file="Result.txt",row.names = FALSE)
 print(result)
 result
 

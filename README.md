@@ -2,9 +2,12 @@
 In this repository you will find run_analysis.R script. This script will take the content of UCI HAR Dataset directory (the result of downloading https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip file and uncompress it) and will deliver a tidy dataset with the average values for each subject, activity and measure requested by the assignment.
 As prerequisites for working, used R must have access to reshape2 package, UCI HAR Dataset directoryr must have downloaded content inside and the script must be copied and executet at the same directory as UCI HAR Dataset directory.
 
-## Script description
+This repository will also contain CodeBook.md file.
+
+## run_analysis.R
 
 This script is based on defined steps of the assignement description:
+
 1.- Merges the training and the test sets to create one data set
 The script reads all neede files from test directory (data, subjects and activities) and merges all in a single data frame using cbind.
 It repeats the same with training data creating another data frame. Both data frames are merged together using rbind
@@ -24,16 +27,8 @@ Applying an aggregation, the script achieves the creation of result data frame t
 
 Finally, result data frame is showed.
 
-## Code Book of result.txt
+## CodeBook.md
+This file will contain the code book that describes the variables, the data, and any transformations or work performed to clean up the data.
 
-Subject integer
- Identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
 
-Activity_Name character
- Name of the activity that is performed for each window sample. Its value can be : "LAYING" "SITTING" "STANDING" "WALKING" "WALKING_DOWNSTAIRS" and "WALKING_UPSTAIRS"
- 
-variable character
- Name of the measure for each window sample. Its value can be: tBodyAcc-mean()-X tBodyAcc-mean()-Y tBodyAcc-mean()-Z tGravityAcc-mean()-X tGravityAcc-mean()-Y tGravityAcc-mean()-Z tBodyAccJerk-mean()-X tBodyAccJerk-mean()-Y tBodyAccJerk-mean()-Z tBodyGyro-mean()-X tBodyGyro-mean()-Y tBodyGyro-mean()-Z tBodyGyroJerk-mean()-X tBodyGyroJerk-mean()-Y tBodyGyroJerk-mean()-Z tBodyAccMag-mean() tGravityAccMag-mean() tBodyAccJerkMag-mean() tBodyGyroMag-mean() tBodyGyroJerkMag-mean() fBodyAcc-mean()-X fBodyAcc-mean()-Y fBodyAcc-mean()-Z fBodyAccJerk-mean()-X fBodyAccJerk-mean()-Y fBodyAccJerk-mean()-Z fBodyGyro-mean()-X fBodyGyro-mean()-Y fBodyGyro-mean()-Z fBodyAccMag-mean() fBodyBodyAccJerkMag-mean() fBodyBodyGyroMag-mean() fBodyBodyGyroJerkMag-mean() tBodyAcc-std()-X tBodyAcc-std()-Y tBodyAcc-std()-Z tGravityAcc-std()-X tGravityAcc-std()-Y tGravityAcc-std()-Z tBodyAccJerk-std()-X tBodyAccJerk-std()-Y tBodyAccJerk-std()-Z tBodyGyro-std()-X tBodyGyro-std()-Y tBodyGyro-std()-Z tBodyGyroJerk-std()-X tBodyGyroJerk-std()-Y tBodyGyroJerk-std()-Z tBodyAccMag-std() tGravityAccMag-std() tBodyAccJerkMag-std() tBodyGyroMag-std() tBodyGyroJerkMag-std() fBodyAcc-std()-X fBodyAcc-std()-Y fBodyAcc-std()-Z fBodyAccJerk-std()-X fBodyAccJerk-std()-Y fBodyAccJerk-std()-Z fBodyGyro-std()-X fBodyGyro-std()-Y fBodyGyro-std()-Z fBodyAccMag-std() fBodyBodyAccJerkMag-std() fBodyBodyGyroMag-std() and fBodyBodyGyroJerkMag-std()
- 
-value numeric
- Numeric value of the average of each variable for each activity and each subject
+
