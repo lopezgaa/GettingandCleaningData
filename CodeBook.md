@@ -60,8 +60,8 @@ Based on the result of previous steps, the script has created a data frame with 
 result1: Result of removing unneccesary variables form the analysis dataset
 
 ### From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-The script uses melt function for converting all measures to dimensions in the data frame. As result of it it creates a new data frame with Subject, Activity name, measure name and measure value.
-Applying an aggregation, the script achieves the creation of result data frame that contains the mean for each subject, activity and measure.
+The script uses melt function for converting all measures to dimensions in the data frame. As result of it it creates a new data frame with Subject, Activity name and teh values for all variables included in the analysis.
+Applying an aggregation, the script achieves the creation of result data frame that contains the mean for each subject, activity and measure. The sesult will be written in Result.txt file.
 
 merged_dimensioned: Used for moving variables column names as dimension for aggregating.
 
